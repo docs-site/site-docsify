@@ -1,0 +1,3 @@
+{
+  "editor.tabSize": 4,        // 默认的制表符长度是4，具体的在 .editorconfig 中配置
+}
