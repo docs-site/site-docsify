@@ -12,3 +12,12 @@ docsify是一个神奇的文档站点生成器。简单轻量级，没有静态�
 >- [badgen.net](https://badgen.net/)
 >- [Shields.io | Shields.io](https://shields.io/)
 >- [For the Badge](https://forthebadge.com/)
+
+# <font size=3>三、CDN</font>
+
+>[https://cdn.jsdelivr.net/gh/docs-site/site-docsify@master/](https://cdn.jsdelivr.net/gh/docs-site/site-docsify@master/)
+>
+>[https://cdn.jsdelivr.net/npm/@docs-site/site-docsify/](https://cdn.jsdelivr.net/npm/@docs-site/site-docsify/)
+>
+>[https://app.unpkg.com/@docs-site/site-docsify/](https://app.unpkg.com/@docs-site/site-docsify/)
+
