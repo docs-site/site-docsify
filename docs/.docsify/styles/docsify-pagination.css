@@ -8,5 +8,5 @@
  * @brief 分页项标题样式
  */
 .pagination-item-title {
-  font-size: 1.0em;  /* 字体大小1em */
+  font-size: 1.0em !important;  /* 字体大小1em */
 }
