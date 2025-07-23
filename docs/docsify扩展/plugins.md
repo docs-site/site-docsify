@@ -47,3 +47,10 @@ categories:
 
 <img src="./plugins/img/sumu001.jpg" alt="sumu001" />
 
+## 二、md文档相对路径
+
+跳转到上级目录文件【[../examples/docsify-docs/插件开发.md](../examples/docsify-docs/插件开发.md)】
+
+跳转到同级目录文件【 [./README.md](./README.md)】
+
+绝对路径不处理【[Visual Studio Code - Code Editing. Redefined](https://code.visualstudio.com/)】
