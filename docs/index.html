@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
 
   <link rel="shortcut icon" type="image/x-icon" href="./.docsify/images/favicon-32x32.ico" />
-  
+
   <!-- plugins css-->
   <!-- 1. https://github.com/iPeng6/docsify-sidebar-collapse - Support docsify sidebar catalog expand and collapse. -->
   <link rel="stylesheet" href="./.docsify/styles/docsify-sidebar-collapse.css" />
@@ -20,7 +20,7 @@
 
   <!-- 4. https://github.com/imyelo/docsify-pagination - Pagination for docsify -->
   <link rel="stylesheet" href="./.docsify/styles/docsify-pagination.css" />
-  
+
   <!-- 6. https://github.com/FranCarstens/docsify-breadcrumb - Add a customizable breadcrumb to the top of each page. -->
   <link rel="stylesheet" href="./.docsify/styles/docsify-breadcrumb.css" />
 
@@ -47,7 +47,8 @@
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md'// docsify会逐级查找_sidebar.md，找不到时会报错，这里可以定义路由别名，当找不到时都用根目录的_sidebar.md。
       },
-      copyCode: {        // docsify-copy-code (defaults)
+      debug: false,       // 调试模式标志
+      copyCode: {         // docsify-copy-code (defaults)
         buttonText: 'Copy',
         errorText: 'Error',
         successText: 'Copied'
@@ -55,11 +56,19 @@
       imagePath: {
         basePath: '/site-docsify'  // 部署目录前缀
       },
-      count: {           // docsify-count (defaults)
+      count: {
         countable: true,
+        position: 'top',
+        margin: '10px',
+        float: 'right',
         fontsize: '0.9em',
         color: 'rgb(90,90,90)',
-        language: 'chinese'
+        language: 'chinese',
+        localization: {
+          words: "",
+          minute: ""
+        },
+        isExpected: true
       },
       pagination: {      // docsify-pagination (defaults)
         previousText: '上一章节',
@@ -115,7 +124,7 @@
   <script src="./.docsify/plugins/docsify-copy-code.js"></script>
 
   <!-- 3. https://github.com/827652549/docsify-count - Add word count for markdown files of docsify.(添加字数统计). -->
-  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+  <script src="./.docsify/plugins/docsify-countable.js"></script>
 
   <!-- 4. https://github.com/imyelo/docsify-pagination - Pagination for docsify -->
   <!-- <link rel="stylesheet" href="./.docsify/styles/docsify-pagination.css" /> -->
