@@ -3,7 +3,7 @@
  * File name  : docsify-formatter.js
  * Author     : 苏木
  * Date       : 2025-07-18
- * Version    : 
+ * Version    : VERSION
  * Description: 将YAML front matter转换为Markdown代码块的Docsify插件
  * ======================================================
  */
@@ -81,6 +81,9 @@ function docsifyFormatter(hook, vm) {
  * @description 安全地注册插件并合并配置
  */
 (function registerPlugin() {
+  // 插件版本号
+  const VERSION = '1.0.0';
+  
   // 初始化docsify全局对象
   window.$docsify = window.$docsify || {};
   
@@ -105,5 +108,14 @@ function docsifyFormatter(hook, vm) {
     // 为插件函数添加标识
     docsifyFormatter.name = 'docsifyFormatter';
     window.$docsify.plugins.unshift(docsifyFormatter);
+
+    // 调试模式下打印版本信息
+    if (window.$docsify.debug || localStorage.getItem('docsifyDebug')) {
+      console.log(
+        `%c docsify-formatter %c v${VERSION} `,
+        'background:#35495e; padding: 1px; border-radius: 3px 0 0 3px; color: #fff',
+        'background:#41b883; padding: 1px; border-radius: 0 3px 3px 0; color: #fff'
+      );
+    }
   }
 })();

@@ -3,7 +3,7 @@
  * File name  : docsify-image-path.js
  * Author     : 苏木
  * Date       : 2025-07-18
- * Version    : 
+ * Version    : VERSION
  * Description: 将Markdown中的相对图片路径转换为绝对路径,支持自动区分开发/生产环境
  * ======================================================
  */
@@ -108,6 +108,9 @@ function docsifyImagePath(hook, vm) {
  * @description 安全地注册插件并合并配置
  */
 (function registerPlugin() {
+  // 插件版本号
+  const VERSION = '1.0.0';
+  
   // 初始化docsify全局对象
   window.$docsify = window.$docsify || {};
   
@@ -132,5 +135,14 @@ function docsifyImagePath(hook, vm) {
     // 为插件函数添加标识
     docsifyImagePath.name = 'docsifyImagePath';
     window.$docsify.plugins.unshift(docsifyImagePath);
+
+    // 调试模式下打印版本信息
+    if (window.$docsify.debug || localStorage.getItem('docsifyDebug')) {
+      console.log(
+        `%c docsify-image-path %c v${VERSION} `,
+        'background:#35495e; padding: 1px; border-radius: 3px 0 0 3px; color: #fff',
+        'background:#41b883; padding: 1px; border-radius: 0 3px 3px 0; color: #fff'
+      );
+    }
   }
 })();

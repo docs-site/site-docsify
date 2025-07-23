@@ -6,6 +6,7 @@
  * Version    : 
  * Description: 为code的代码显示添加行号，并高亮显示激活行。
  *              https://github.com/spite-triangle/docsify-codeLineNum
+ *              @V1.0.2 https://github.com/spite-triangle/docsify-codeLineNum/commit/a74abe80d985420b89387a09e609698fd4d0040a
  * ======================================================
  */
 
@@ -168,6 +169,7 @@ var plugin = function (hook, vm) {
  * @description 安全地注册插件并合并配置
  */
 (function registerPlugin() {
+  const VERSION = '1.0.0'
   // 初始化docsify全局对象
   window.$docsify = window.$docsify || {};
   
@@ -192,5 +194,14 @@ var plugin = function (hook, vm) {
     // 为插件函数添加标识
     plugin.name = 'docsifyCodeLineNumbers';
     window.$docsify.plugins.unshift(plugin);
+      
+    // 调试模式下打印版本信息
+    if (window.$docsify.debug || localStorage.getItem('docsifyDebug')) {
+      console.log(
+        `%c docsify-code-line-numbers %c v${VERSION} `,
+        'background:#35495e; padding: 1px; border-radius: 3px 0 0 3px; color: #fff',
+        'background:#41b883; padding: 1px; border-radius: 0 3px 3px 0; color: #fff'
+      );
+    }
   }
 })();

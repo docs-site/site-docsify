@@ -1,9 +1,9 @@
 /** =====================================================
  * Copyright © hk. 2022-2025. All rights reserved.
- * File name  : relative-path.js
+ * File name  : docsify-relative-path.js
  * Author     : 苏木
  * Date       : 2025-07-23
- * Version    : 
+ * Version    : VERSION
  * Description: 将Markdown中的相对路径链接转换为绝对路径
  * ======================================================
  */
@@ -99,6 +99,9 @@ function docsifyRelativePath(hook, vm) {
  * @brief 注册插件
  */
 (function registerPlugin() {
+  // 插件版本号
+  const VERSION = '1.0.0';
+  
   window.$docsify = window.$docsify || {};
 
   // 合并配置
@@ -121,5 +124,14 @@ function docsifyRelativePath(hook, vm) {
   if (!isRegistered) {
     docsifyRelativePath.name = 'docsifyRelativePath';
     window.$docsify.plugins.unshift(docsifyRelativePath);
+
+    // 调试模式下打印版本信息
+    if (window.$docsify.debug || localStorage.getItem('docsifyDebug')) {
+      console.log(
+        `%c docsify-relative-path %c v${VERSION} `,
+        'background:#35495e; padding: 1px; border-radius: 3px 0 0 3px; color: #fff',
+        'background:#41b883; padding: 1px; border-radius: 0 3px 3px 0; color: #fff'
+      );
+    }
   }
 })();

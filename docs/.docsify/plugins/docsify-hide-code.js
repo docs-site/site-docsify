@@ -3,9 +3,10 @@
  * File name  : docsify-hide-code.js
  * Author     : 苏木
  * Date       : 2025-07-18
- * Version    : 
+ * Version    : VERSION
  * Description: A docsify plugin that hide code.
  *              https://github.com/jl15988/docsify-hide-code
+ *              @V1.0.1 https://github.com/jl15988/docsify-hide-code/commit/b612a76b7a57b945c83b00515d9794419026ed5f
  * ======================================================
  */
 
@@ -97,6 +98,9 @@ function docsifyHideCode(hook, vm) {
  * @description 安全地注册插件并合并配置
  */
 (function registerPlugin() {
+  // 插件版本号
+  const VERSION = '1.0.0';
+  
   // 初始化docsify全局对象
   window.$docsify = window.$docsify || {};
   
@@ -121,5 +125,14 @@ function docsifyHideCode(hook, vm) {
     // 为插件函数添加标识
     docsifyHideCode.name = 'docsifyHideCode';
     window.$docsify.plugins.unshift(docsifyHideCode);
+
+    // 调试模式下打印版本信息
+    if (window.$docsify.debug || localStorage.getItem('docsifyDebug')) {
+      console.log(
+        `%c docsify-hide-code %c v${VERSION} `,
+        'background:#35495e; padding: 1px; border-radius: 3px 0 0 3px; color: #fff',
+        'background:#41b883; padding: 1px; border-radius: 0 3px 3px 0; color: #fff'
+      );
+    }
   }
 })();

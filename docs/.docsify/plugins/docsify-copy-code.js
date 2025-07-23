@@ -5,7 +5,8 @@
  * Date       : 2025-07-18
  * Version    : 
  * Description: A docsify plugin that copies Markdown code block to your clipboard.
- *              https://github.com/jperasmus/docsify-copy-code
+ *              https://github.com/jperasmus/docsify-copy-code 
+ *              @V3.0.0 https://github.com/jperasmus/docsify-copy-code/commit/9eabe970383ece2423cedc9c92f8b69d316b9b59
  * ======================================================
  */
 

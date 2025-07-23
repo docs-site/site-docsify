@@ -3,9 +3,10 @@
  * File name  : docsify-toc.js
  * Author     : 苏木
  * Date       : 2025-07-18
- * Version    : 
+ * Version    : VERSION
  * Description: Add a Table of Contents to your site.
  *              https://github.com/mrpotatoes/docsify-toc
+ *              @V1.1.0 https://github.com/mrpotatoes/docsify-toc/commit/8075a7fb2a38e1d845a61c63c935288835d28921
  * ======================================================
  */
 
@@ -216,6 +217,9 @@ function docsifyToc(hook, vm) {
  * @description 安全地注册插件并合并配置
  */
 (function registerPlugin() {
+  // 插件版本号
+  const VERSION = '1.0.0';
+  
   // 初始化docsify全局对象
   window.$docsify = window.$docsify || {};
   
@@ -240,5 +244,14 @@ function docsifyToc(hook, vm) {
     // 为插件函数添加标识
     docsifyToc.name = 'docsifyToc';
     window.$docsify.plugins.unshift(docsifyToc);
+
+    // 调试模式下打印版本信息
+    if (window.$docsify.debug || localStorage.getItem('docsifyDebug')) {
+      console.log(
+        `%c docsify-toc %c v${VERSION} `,
+        'background:#35495e; padding: 1px; border-radius: 3px 0 0 3px; color: #fff',
+        'background:#41b883; padding: 1px; border-radius: 0 3px 3px 0; color: #fff'
+      );
+    }
   }
 })();

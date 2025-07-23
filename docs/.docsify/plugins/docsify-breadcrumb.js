@@ -6,6 +6,7 @@
  * Version    : 
  * Description: Add a customizable breadcrumb to the top of each page.
  *              https://github.com/FranCarstens/docsify-breadcrumb 
+ *              @V1.0.5 https://github.com/FranCarstens/docsify-breadcrumb/commit/2770a8be093d729965c7fffab379c400b396bd2a
  * ======================================================
  */
 
@@ -194,6 +195,9 @@ function generateAccessibleBreadcrumb(homeLink, list) {
  * @description 采用标准注册模式，安全地注册面包屑插件
  */
 (function registerBreadcrumbPlugin() {
+    // 插件版本号
+  const VERSION = '1.0.0';
+  
   try {
     if (typeof window === 'undefined') return;
 
@@ -231,6 +235,15 @@ function generateAccessibleBreadcrumb(homeLink, list) {
         }
       } catch (e) {
         // 忽略环境检查错误
+      }
+      
+      // 调试模式下打印版本信息
+      if (window.$docsify.debug || localStorage.getItem('docsifyDebug')) {
+        console.log(
+          `%c docsify-breadcrumb %c v${VERSION} `,
+          'background:#35495e; padding: 1px; border-radius: 3px 0 0 3px; color: #fff',
+          'background:#41b883; padding: 1px; border-radius: 0 3px 3px 0; color: #fff'
+        );
       }
     }
   } catch (error) {
