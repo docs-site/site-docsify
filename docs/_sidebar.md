@@ -18,3 +18,8 @@
 		- [📝 04-TypeScript-类型接口和命名空间](/VS-Code-Extension-Doc-ZH/02-预备知识/04-TypeScript-类型接口和命名空间.md)
 		- [📝 05-Typescript-泛型](/VS-Code-Extension-Doc-ZH/02-预备知识/05-Typescript-泛型.md)
 		- [📝 06-Typescript-声明文件](/VS-Code-Extension-Doc-ZH/02-预备知识/06-Typescript-声明文件.md)
+	- [📂 03-扩展指南](/VS-Code-Extension-Doc-ZH/03-扩展指南/)
+		- [📝 01-菜单实现](/VS-Code-Extension-Doc-ZH/03-扩展指南/01-菜单实现.md)
+- [📂 VS-Code-Guide](/VS-Code-Guide/)
+	- [📝 LV01-vscode基础应用](/VS-Code-Guide/LV01-vscode基础应用.md)
+	- [📝 LV02-vscode配置文件](/VS-Code-Guide/LV02-vscode配置文件.md)
