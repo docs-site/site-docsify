@@ -23,3 +23,4 @@
 - [📂 VS-Code-Guide](/VS-Code-Guide/)
 	- [📝 LV01-vscode基础应用](/VS-Code-Guide/LV01-vscode基础应用.md)
 	- [📝 LV02-vscode配置文件](/VS-Code-Guide/LV02-vscode配置文件.md)
+	- [📝 LV03-任务](/VS-Code-Guide/LV03-任务.md)
