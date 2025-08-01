@@ -1,0 +1,70 @@
+/**
+ * @file image-styles.css
+ * @brief 图片样式文件
+ * @description 定义文档中所有图片的样式和布局
+ */
+
+/**
+ * @brief 基础图片样式
+ */
+.markdown-section img {
+  display: block;                 /* 块级显示 */
+  margin: 1.5rem auto;            /* 上下边距1.5rem，左右自动居中 */
+  max-width: 90%;                 /* 最大宽度90% */
+  height: auto;                   /* 高度自适应 */
+  border-radius: 4px;             /* 圆角边框 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+  transition: all 0.3s ease;      /* 平滑过渡效果 */
+}
+
+/**
+ * @brief 图片悬停效果
+ */
+.markdown-section img:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* 悬停时阴影加深 */
+  transform: translateY(-2px);    /* 轻微上浮效果 */
+}
+
+/**
+ * @brief 小屏幕下的响应式调整
+ */
+@media screen and (max-width: 768px) {
+  .markdown-section img {
+    max-width: 100%;              /* 小屏幕下全宽显示 */
+    margin: 1rem auto;            /* 调整边距 */
+  }
+}
+
+/**
+ * @brief 带边框的图片样式
+ */
+.markdown-section img.bordered {
+  border: 1px solid #eaecef;      /* 浅色边框 */
+  padding: 4px;                   /* 内边距 */
+  background-color: #fff;         /* 白色背景 */
+}
+
+/**
+ * @brief 图片标题样式
+ */
+.image-caption {
+  display: block;                 /* 块级显示 */
+  text-align: center;             /* 文本居中 */
+  font-size: 0.9rem;              /* 较小字体 */
+  color: #666;                    /* 灰色文字 */
+  margin-top: 0.5rem;             /* 上边距 */
+  font-style: italic;             /* 斜体 */
+}
+
+/* 徽标图片特殊样式 */
+.markdown-section img[src*="badgen.net"],
+.markdown-section img[src*="img.shields.io"],
+.markdown-section img[src*="shields.io"],
+.markdown-section img[src*="staticbadge"],
+.markdown-section img[src*="forthebadge.com"] {
+  display: inline-block;          /* 内联块显示 */
+  margin: 0 0.2rem;              /* 左右边距 */
+  vertical-align: middle;        /* 垂直居中 */
+  box-shadow: none;              /* 无阴影 */
+  border-radius: 0;              /* 无圆角 */
+}

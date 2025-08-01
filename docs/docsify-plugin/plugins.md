@@ -47,6 +47,14 @@ categories:
 
 <img src="./plugins/img/sumu001.jpg" alt="sumu001" />
 
+### 3. 带属性
+
+```html
+<img src="plugins/img/sumu001.jpg" alt="sumu001" style="zoom: 25%;" />
+```
+
+<img src="plugins/img/sumu001.jpg" alt="sumu001" style="zoom: 25%;" />
+
 ## 二、md文档相对路径
 
 跳转到上级目录文件【[../examples/docsify-docs/插件开发.md](../examples/docsify-docs/插件开发.md)】

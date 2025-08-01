@@ -76,11 +76,11 @@ function docsifyImagePath(hook, vm) {
     const config = getConfig();
     if (!config.enabled) return content;
 
-    // 处理所有相对路径图片
-    return content.replace(/<img src="([^"]+)" alt="([^"]*)"\s*\/?>/g,
-      (match, src, alt) => {
+    // 处理所有相对路径图片(改进正则表达式处理自闭合标签)
+    return content.replace(/<img\s+src="([^"]+)"\s+alt="([^"]*)"([^>]*?)(\/?)>/g,
+      (match, src, alt, extraAttrs, selfClosing) => {
         const absolutePath = convertImagePath(src, vm.route.path, config);
-        return `<img src="${absolutePath}" alt="${alt}" />`;
+        return `<img src="${absolutePath}" alt="${alt}"${extraAttrs}${selfClosing}>`;
       });
   });
 
@@ -92,13 +92,30 @@ function docsifyImagePath(hook, vm) {
     const config = getConfig();
     if (!config.enabled) return;
 
-    // 处理所有相对路径图片
+    // 处理所有相对路径图片(保留原有属性)
     document.querySelectorAll('img').forEach(img => {
       const src = img.getAttribute('src');
       if (!src) return;
 
       const absolutePath = convertImagePath(src, vm.route.path, config);
       img.setAttribute('src', absolutePath);
+      
+      // 保留其他属性并确保HTML结构正确
+      const attrs = Array.from(img.attributes)
+        .filter(attr => !['src', 'alt'].includes(attr.name))
+        .map(attr => {
+          // 处理布尔属性(如disabled, checked等)
+          if (attr.value === '') return attr.name;
+          return `${attr.name}="${attr.value}"`;
+        })
+        .join(' ');
+      
+      // 确保自闭合标签格式正确
+      if (img.outerHTML.endsWith('/>')) {
+        img.outerHTML = img.outerHTML.replace('/>', `${attrs ? ' ' + attrs : ''} />`);
+      } else {
+        img.outerHTML = img.outerHTML.replace('>', `${attrs ? ' ' + attrs : ''}>`);
+      }
     });
   });
 }
