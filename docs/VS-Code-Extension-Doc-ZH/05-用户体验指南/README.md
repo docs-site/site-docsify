@@ -118,6 +118,4 @@ VS Code 界面大致可以分为两个主要概念：**容器**和**项**。一�
 
 ![Overview of the Settings page](README/img/settings.png)
 
-### Was this documentation helpful?
-
 <Catalog />
